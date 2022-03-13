@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.Gravity
 import android.view.View
+import android.widget.LinearLayout
 import android.widget.TextView
 import java.util.*
 
@@ -74,6 +75,12 @@ class MainActivity : Activity() {
         val timeView = findViewById<View>(
             R.id.time_view
         ) as TextView
+
+        val mainLayout = findViewById<LinearLayout>(R.id.mainLayout);
+        mainLayout.setOnLongClickListener {
+            running = !running
+            true
+        };
 
         // Creates a new Handler
         val handler = Handler()
