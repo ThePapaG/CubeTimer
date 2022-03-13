@@ -78,9 +78,14 @@ class MainActivity : Activity() {
 
         val mainLayout = findViewById<LinearLayout>(R.id.mainLayout);
         mainLayout.setOnLongClickListener {
-            running = !running
+            running = true
             true
-        };
+        }
+
+        mainLayout.setOnClickListener {
+            running = false
+            true
+        }
 
         // Creates a new Handler
         val handler = Handler()
